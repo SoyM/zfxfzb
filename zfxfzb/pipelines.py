@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 
 import MySQLdb
+from scrapy.conf import settings
 
 
 class MyprojectPipeline(object):
 
     def __init__(self):
         self.conn = MySQLdb.connect(
-            user='root',
-            passwd='toor',
-            db='test',
-            host='127.0.0.1',
+            user=settings['MINGODB_USER'],
+            passwd=settings['MONGODB_PSW'],
+            db=settings['MYSQL_DB'],
+            host=settings['MONGODB_HOST'],
             charset="utf8",
             use_unicode=True)
         self.cursor = self.conn.cursor()

@@ -2,6 +2,6 @@
 
 import os
 
-JwUrl = ''
+JwUrl = 'http://xxx.xxx.xxx.xxx'
 
 os.system("scrapy crawl score -a JwUrl=%s" % JwUrl)

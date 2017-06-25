@@ -8,10 +8,9 @@ from scrapy.contrib.spiders import CrawlSpider
 
 class MininovaSpider(CrawlSpider):
     name = 'score'
-    
 
     def __init__(self, JwUrl=None, *args, **kwargs):
-        self.JwUrl =JwUrl
+        self.JwUrl = JwUrl
         if JwUrl:
             self.start_urls = [JwUrl+'/excel/']
         else:
@@ -43,7 +42,7 @@ class MininovaSpider(CrawlSpider):
 
     def parse(self, response):
         scorefile = open("score.log", "rw+")
-        scorelog=scorefile.read()
+        scorelog = scorefile.read()
         lines = response.xpath(
             '//a/@href').re("/excel/\d{19}.xls|/excel/.*html")
         if scorelog:
@@ -52,10 +51,10 @@ class MininovaSpider(CrawlSpider):
             StartEcho = True
         for line in lines:
             if StartEcho:
-                #print line
+                # print line
                 yield Request(self.JwUrl+line, callback=self.parse_item)
             if line in scorelog:
                 StartEcho = True
-                
+
         scorefile.write(line+'\n')
         scorefile.close()
