@@ -24,6 +24,6 @@ ITEM_PIPELINES = {
 
 # 数据库配置
 MYSQL_DB = "wechat"
-MONGODB_HOST = "127.0.0.1"
-MINGODB_USER = ""
-MONGODB_PSW = ""
+MYSQL_HOST = "127.0.0.1"
+MYSQL_USER = ""
+MYSQL_PSW = ""

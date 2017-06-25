@@ -8,10 +8,10 @@ class MyprojectPipeline(object):
 
     def __init__(self):
         self.conn = MySQLdb.connect(
-            user=settings['MINGODB_USER'],
-            passwd=settings['MONGODB_PSW'],
+            user=settings['MYSQL_USER'],
+            passwd=settings['MYSQL_PSW'],
             db=settings['MYSQL_DB'],
-            host=settings['MONGODB_HOST'],
+            host=settings['MYSQL_HOST'],
             charset="utf8",
             use_unicode=True)
         self.cursor = self.conn.cursor()

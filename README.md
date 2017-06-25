@@ -22,4 +22,4 @@ python run.py
 
 **数据预览**：
 
-!["预览"](https://github.com/dairoot/zfxfzb/blob/master/2014.png)
+!["预览"](https://raw.githubusercontent.com/dairoot/zfxfzb/master/2014.png)
